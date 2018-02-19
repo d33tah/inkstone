@@ -1,0 +1,8 @@
+title: Inkstone
+description: Learn Chinese on the go - no Internet connection required!
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-cayman
+
+gems:
+  - jekyll-mentions
