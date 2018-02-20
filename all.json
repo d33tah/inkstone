@@ -1,8 +1,13 @@
 [
-  {"category": "Beginner Chinese", "name": "Lessons 1-4", "ts": 1472955341}
-  ,{"category": "Beginner Chinese", "name": "Lessons 5-7", "ts": 1472955341}
-  ,{"category": "Beginner Chinese", "name": "Lessons 8-10", "ts": 1472955341}
-  ,{"category": "Integrated Chinese", "name": "Lesson 1", "ts": 1476422580}
-  ,{"category": "NPCR 1", "name": "Lesson 1", "ts": 1519082588}
-  ,{"category": "NPCR 1", "name": "Lesson 1-11", "ts": 1519082589}
+  {"category": "NPCR 1", "name": "npcr-1-01", "ts": 1519082588}
+  ,{"category": "NPCR 1", "name": "npcr-1-02", "ts": 1519082589}
+  ,{"category": "NPCR 1", "name": "npcr-1-03", "ts": 1519082589}
+  ,{"category": "NPCR 1", "name": "npcr-1-04", "ts": 1519082589}
+  ,{"category": "NPCR 1", "name": "npcr-1-05", "ts": 1519082589}
+  ,{"category": "NPCR 1", "name": "npcr-1-06", "ts": 1519082589}
+  ,{"category": "NPCR 1", "name": "npcr-1-07", "ts": 1519082589}
+  ,{"category": "NPCR 1", "name": "npcr-1-08", "ts": 1519082589}
+  ,{"category": "NPCR 1", "name": "npcr-1-09", "ts": 1519082589}
+  ,{"category": "NPCR 1", "name": "npcr-1-10", "ts": 1519082589}
+  ,{"category": "NPCR 1", "name": "npcr-1-11", "ts": 1519082589}
 ]
