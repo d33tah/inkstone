@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail  # "bash script mode"
+
 DIRECTORY="/home/d33tah/workspace/src/inkstone"
 ZIPALIGN="zipalign"
 
@@ -20,7 +22,7 @@ pushd .build/android/project/cordova
 ./build --release
 cd ../build/outputs/apk
 
-keytool -genkey -alias inkstone -keystore ~/.keystore -keyalg RSA -keysize 2048 -validity 10000
+# keytool -genkey -alias inkstone -keystore ~/.keystore -keyalg RSA -keysize 2048 -validity 10000
 
 # Sign the output. Will prompt for passwords.
 jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore ~/.keystore project-armv7-release-unsigned.apk inkstone
