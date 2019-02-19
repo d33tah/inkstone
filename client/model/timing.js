@@ -31,7 +31,7 @@ import {assert} from '/lib/base';
 // card counts for the current session and the timestamp at which it began.
 // On each frame, we check whether the current session is over.
 
-const kSessionDuration = 30 * 60;
+const kSessionDuration = 10 * 60;
 
 const timing = new PersistentVar('timing');
 
