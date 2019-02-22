@@ -1,4 +1,3 @@
-const kDemoWord = '你好';
 
 const kOptions = {
   display: {
@@ -21,7 +20,7 @@ const kOptions = {
   modes: [
     {
       repeat: 2,
-      watermark: 1,
+      watermark: 0,
       demo: 0,
       single_tap: 2,
       double_tap: 2,
@@ -41,7 +40,7 @@ const kOptions = {
 // data for that to that character. This method may be replaced by other
 // asset-loading mechanisms in real deployments of this library.
 const getCharacterData = (character) => {
-  const asset = `assets/${Math.floor(character.charCodeAt(0) / 256)}`;
+  const asset = `assets/character_data/${Math.floor(character.charCodeAt(0) / 256)}`;
   return getUrl(asset).then((data) => {
     for (const line of data.trim().split('\n')) {
       const row = JSON.parse(line);
