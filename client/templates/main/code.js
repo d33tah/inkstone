@@ -19,6 +19,7 @@
 
 import {Settings} from '/client/model/settings';
 import {Timing} from '/client/model/timing';
+import {Vocabulary} from '/client/model/vocabulary';
 
 // Set up the routing table and transitioner.
 
@@ -56,6 +57,7 @@ Template.layout.helpers({
     if (Settings.get('revisit_failures')) {
       left += ' + ' + (x ? x.failures : '?');
     }
+    left += ' / ' + Vocabulary.getNewItems().count();
     return left;
   },
   theme: () => {
