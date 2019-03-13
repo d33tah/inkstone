@@ -1,7 +1,9 @@
 #!/bin/bash
 
-DIRECTORY="/Users/skishore/Dropbox/Projects/inkstone"
-ZIPALIGN="/Users/skishore/Library/Android/sdk/build-tools/23.0.1/zipalign"
+set -euo pipefail  # "bash script mode"
+
+DIRECTORY="/home/d33tah/workspace/src/inkstone"
+ZIPALIGN="zipalign"
 
 # Clear the build directory.
 rm -r .build
@@ -20,10 +22,13 @@ pushd .build/android/project/cordova
 ./build --release
 cd ../build/outputs/apk
 
+# keytool -genkey -alias inkstone -keystore ~/.keystore -keyalg RSA -keysize 2048 -validity 10000
+
 # Sign the output, using our private ~/.keystore and ~/.keystore_password.
 PASSWORD=`cat ~/.keystore_password`
 jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore ~/.keystore -storepass "$PASSWORD" project-armv7-release-unsigned.apk inkstone
 jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore ~/.keystore -storepass "$PASSWORD" project-x86-release-unsigned.apk inkstone
+
 $ZIPALIGN -f 4 project-armv7-release-unsigned.apk project-armv7-release.apk
 $ZIPALIGN -f 4 project-x86-release-unsigned.apk project-x86-release.apk
 
