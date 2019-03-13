@@ -1,4 +1,4 @@
-App.accessRule('https://www.skishore.me/inkstone/*');
+App.accessRule('https://d33tah.github.io/inkstone/*');
 App.info({
   name: 'Inkstone',
   description: 'Learn to write Chinese characters.',

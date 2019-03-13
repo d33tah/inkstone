@@ -1,7 +1,9 @@
 #!/bin/bash
 
-DIRECTORY="/Users/skishore/Dropbox/Projects/inkstone"
-ZIPALIGN="/Users/skishore/Library/Android/sdk/build-tools/23.0.1/zipalign"
+set -euo pipefail  # "bash script mode"
+
+DIRECTORY="/home/d33tah/workspace/src/inkstone"
+ZIPALIGN="zipalign"
 
 # Clear the build directory.
 rm -r .build
