@@ -165,6 +165,7 @@ const onStroke = (stroke) => {
     task.penalties += 1;
     handwriting.undo();
     handwriting.flash(path);
+    handwriting.warn("Already drawn!");
     return;
   }
 
@@ -188,6 +189,7 @@ const onStroke = (stroke) => {
     handwriting.glow(task.result);
   } else if (task.missing[0] < index) {
     task.penalties += 2 * (index - task.missing[0]);
+    handwriting.warn("Out of order!");
     handwriting.flash(task.strokes[task.missing[0]]);
   } else {
     task.mistakes = 0;
