@@ -124,6 +124,9 @@ const show = (row) => {
       value: formatEtymology(row.etymology),
     });
   }
+  if (row.etymology.wiktionary) {
+    value.push({label: 'Wiki:', value: row.etymology.wiktionary});
+  }
   character.set(row.character);
   metadata.set(value);
   stroke_order.set(getAnimationData(row.strokes, row.medians));
