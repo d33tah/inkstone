@@ -93,13 +93,6 @@ const transition = () => {
 
 // Event handlers for touch interactions on the handwriting canvas.
 
-const onClick = () => {
-  if (maybeAdvance()) return;
-  const task = item.tasks[item.index];
-  task.penalties += kMaxPenalties;
-  handwriting.flash(task.strokes[task.missing[0]]);
-}
-
 const onDouble = () => {
   if (maybeAdvance()) return;
   const task = item.tasks[item.index];
@@ -120,7 +113,7 @@ const onRegrade = (result) => {
 }
 
 const onRendered = function() {
-  const options = {onclick: onClick, ondouble: onDouble, onstroke: onStroke};
+  const options = {ondouble: onDouble, onstroke: onStroke};
   element = $(this.firstNode).find('.flashcard');
   handwriting = new Handwriting(element, options);
 }

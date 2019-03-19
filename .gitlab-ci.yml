@@ -1,0 +1,5 @@
+image: alpine:latest
+
+build1:
+  script:
+    - echo "Hello, world"
