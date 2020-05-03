@@ -44,14 +44,15 @@ def handle_fname(c, fpath, outpath):
             k = 5
         elif k > 20:
             k = 20
-        dirname = f"{outpath}/{fpath.name.split('.')[0]}"
-        fn = f'{dirname}/{fpath.name}.{k:02d}.txt.list'
+        name = fpath.name.replace('.', '-')
+        dirname = f"{outpath}/{name.split('-')[0]}"
+        fn = f'{dirname}/{name}-{k:02d}.list'
         if fn not in pliki:
             try:
                 pathlib.Path(dirname).mkdir()
             except FileExistsError:
                 pass
-            f = open(fn, 'w')
+            f = open(fn, 'w', newline='\r\n')
             pliki[fn] = csv.writer(f, delimiter='\t', lineterminator='\n')
         pliki[fn].writerow(row)
 
