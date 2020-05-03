@@ -14,6 +14,6 @@ for dirname in sorted(pathlib.Path('lists').glob('*')):
         else:
             first = False
         fn = fname.name[:-5]
-        category = str(fname.name).split('-')[0]
+        category = str(dirname.name)
         print(json.dumps({'category': category, 'name': fn, 'ts': t}))
 print(']')

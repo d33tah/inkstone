@@ -35,7 +35,7 @@ def handle_fname(c, fpath, outpath):
 
     newrows = []
     for row in rows:
-        newrows.append([row[0], row[1], row[2], row[4]])
+        newrows.append([row[0], row[1], row[2], f'/{row[4]}/'])
 
     pliki = {}
     for row in newrows:
@@ -45,7 +45,7 @@ def handle_fname(c, fpath, outpath):
         elif k > 20:
             k = 20
         name = fpath.name.replace('.', '-')
-        dirname = f"{outpath}/{name.split('-')[0]}"
+        dirname = f"{outpath}/{name.split('-')[0][1:]}"
         fn = f'{dirname}/{name}-{k:02d}.list'
         if fn not in pliki:
             try:
