@@ -45,7 +45,7 @@ def handle_fname(c, fpath, outpath):
         elif k > 20:
             k = 20
         dirname = f"{outpath}/{fpath.name.split('.')[0]}"
-        fn = f'{dirname}/{fpath.name}.{k:02d}.txt'
+        fn = f'{dirname}/{fpath.name}.{k:02d}.txt.json'
         if fn not in pliki:
             try:
                 pathlib.Path(dirname).mkdir()

@@ -5,13 +5,15 @@ import json
 
 print('[')
 first = True
+t = 1519082589
 for dirname in sorted(pathlib.Path('lists').glob('*')):
     for fname in sorted(pathlib.Path(dirname).glob('*')):
+        t += 1
         if not first:
             print(',', end='')
         else:
             first = False
-        print(json.dumps({
-            'category': str(fname.name).split('.')[0], 'name': fname.name, 'ts': 1519082589
-        }))
+        fn = fname.name[:-5]
+        category = str(fname.name).split('.')[0]
+        print(json.dumps({'category': category, 'name': fn, 'ts': t}))
 print(']')
